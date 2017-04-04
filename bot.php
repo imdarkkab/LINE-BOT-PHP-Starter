@@ -16,7 +16,7 @@ $reply_messages = array(
 "สวะ","ส้นตีน","หมอย","ร่าน",
 "เงี่ยน","ไพร่","สลัม","ถ่อย","ตอแหล","เสือก","หน้าด้าน","แม่ง","แตด","ไอ้","ชิบหาย"
 );
-$random_keys=array_rand($reply_messages,count($reply_messages));
+//$random_keys=array_rand($reply_messages,count($reply_messages));
 
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => /*$text*/$reply_messages[$random_keys[0]]
+				'text' => /*$text*/ $reply_messages[array_rand($reply_messages)]
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
