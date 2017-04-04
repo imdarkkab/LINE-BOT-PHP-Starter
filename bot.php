@@ -5,6 +5,19 @@ $access_token = 'cYmojL4PjzpRhwAAgAN6a367PA47vJ4akD8uoDnrHsY/bm1Su+fEroz586WX9MZ
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
+
+$reply_messages = array(
+"เหี้ย","ห่า","สัด","ควย",
+"หี","หำ","หัม","กระดอ",
+"จิ๋ม","จู๋","เจี๊ยว","พ่อมึงตาย",
+"แม่มึงตาย","เย็ด","กู","มึง",
+"ดอกทอง","ควาย","กะหรี่",
+"แมงดา","หน้าตัวเมีย","สถุน",
+"สวะ","ส้นตีน","หมอย","ร่าน",
+"เงี่ยน","ไพร่","สลัม","ถ่อย","ตอแหล","เสือก","หน้าด้าน","แม่ง","แตด","ไอ้","ชิบหาย"
+);
+$random_keys=array_rand($reply_messages,count($reply_messages));
+
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -19,7 +32,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => /*$text*/$reply_messages[$random_keys[0]]
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
