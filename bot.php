@@ -28,7 +28,7 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 
-        $response = $bot->replyText($event['replyToken'], $reply_messages[array_rand($reply_messages)]);
+        //$response = $bot->replyText($event['replyToken'], $reply_messages[array_rand($reply_messages)]);
         
 		if ($response->isSucceeded()) {
 			echo 'Succeeded!';
